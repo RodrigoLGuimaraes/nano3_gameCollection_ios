@@ -8,11 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ServiceDelegate {
+    
+    func didReceiveResponse(status: StatusCode, responseJSON: String?) {
+        if status == .Success {
+            print(responseJSON!)
+        } else {
+            //TODO: Alert!
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        Services.shared.getAllGamesFromAYear(delegateTarget: self)
     }
 
     override func didReceiveMemoryWarning() {

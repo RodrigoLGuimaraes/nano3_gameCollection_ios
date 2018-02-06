@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FDF5C269E2F3A8D1EED8A10 /* Pods_nano3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2225379586002A682C53BE48 /* Pods_nano3.framework */; };
+		CE297C20202A6E0800531478 /* ShelfTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE297C1F202A6E0800531478 /* ShelfTableViewCell.swift */; };
+		CE297C25202A70DA00531478 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE297C24202A70DA00531478 /* Services.swift */; };
+		CE297C27202A723400531478 /* GamesListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE297C26202A723400531478 /* GamesListResponse.swift */; };
 		CEAACB13202A5704005B1164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAACB12202A5704005B1164 /* AppDelegate.swift */; };
 		CEAACB15202A5704005B1164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAACB14202A5704005B1164 /* ViewController.swift */; };
 		CEAACB18202A5704005B1164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAACB16202A5704005B1164 /* Main.storyboard */; };
 		CEAACB1A202A5704005B1164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEAACB19202A5704005B1164 /* Assets.xcassets */; };
 		CEAACB1D202A5704005B1164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAACB1B202A5704005B1164 /* LaunchScreen.storyboard */; };
+		CEAACB27202A6058005B1164 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAACB26202A6058005B1164 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0663476959D6AD3B1136220B /* Pods-nano3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nano3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nano3/Pods-nano3.debug.xcconfig"; sourceTree = "<group>"; };
+		2225379586002A682C53BE48 /* Pods_nano3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nano3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EC4658C6BCF9DECF6D56F38 /* Pods-nano3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nano3.release.xcconfig"; path = "Pods/Target Support Files/Pods-nano3/Pods-nano3.release.xcconfig"; sourceTree = "<group>"; };
+		CE297C1F202A6E0800531478 /* ShelfTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfTableViewCell.swift; sourceTree = "<group>"; };
+		CE297C24202A70DA00531478 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		CE297C26202A723400531478 /* GamesListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListResponse.swift; sourceTree = "<group>"; };
 		CEAACB0F202A5704005B1164 /* nano3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nano3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEAACB12202A5704005B1164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEAACB14202A5704005B1164 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +33,7 @@
 		CEAACB19202A5704005B1164 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEAACB1C202A5704005B1164 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEAACB1E202A5704005B1164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEAACB26202A6058005B1164 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +41,64 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FDF5C269E2F3A8D1EED8A10 /* Pods_nano3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1175E036A89CC3AE91E34C92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0663476959D6AD3B1136220B /* Pods-nano3.debug.xcconfig */,
+				7EC4658C6BCF9DECF6D56F38 /* Pods-nano3.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		996FC77A3F9AEEE3972E14D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2225379586002A682C53BE48 /* Pods_nano3.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE297C1C202A60E800531478 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEAACB16202A5704005B1164 /* Main.storyboard */,
+				CEAACB1B202A5704005B1164 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE297C1D202A60EC00531478 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CEAACB14202A5704005B1164 /* ViewController.swift */,
+				CE297C1F202A6E0800531478 /* ShelfTableViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CE297C23202A6E9600531478 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE297C24202A70DA00531478 /* Services.swift */,
+				CE297C26202A723400531478 /* GamesListResponse.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		CEAACB06202A5704005B1164 = {
 			isa = PBXGroup;
 			children = (
 				CEAACB11202A5704005B1164 /* nano3 */,
 				CEAACB10202A5704005B1164 /* Products */,
+				1175E036A89CC3AE91E34C92 /* Pods */,
+				996FC77A3F9AEEE3972E14D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +113,31 @@
 		CEAACB11202A5704005B1164 /* nano3 */ = {
 			isa = PBXGroup;
 			children = (
+				CE297C23202A6E9600531478 /* Services */,
+				CE297C1D202A60EC00531478 /* Controller */,
+				CE297C1C202A60E800531478 /* View */,
+				CEAACB25202A604C005B1164 /* Helpers */,
+				CEAACB24202A6047005B1164 /* Model */,
 				CEAACB12202A5704005B1164 /* AppDelegate.swift */,
-				CEAACB14202A5704005B1164 /* ViewController.swift */,
-				CEAACB16202A5704005B1164 /* Main.storyboard */,
 				CEAACB19202A5704005B1164 /* Assets.xcassets */,
-				CEAACB1B202A5704005B1164 /* LaunchScreen.storyboard */,
 				CEAACB1E202A5704005B1164 /* Info.plist */,
 			);
 			path = nano3;
+			sourceTree = "<group>";
+		};
+		CEAACB24202A6047005B1164 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEAACB25202A604C005B1164 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CEAACB26202A6058005B1164 /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +147,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEAACB21202A5704005B1164 /* Build configuration list for PBXNativeTarget "nano3" */;
 			buildPhases = (
+				08B336124C12964D46720532 /* [CP] Check Pods Manifest.lock */,
 				CEAACB0B202A5704005B1164 /* Sources */,
 				CEAACB0C202A5704005B1164 /* Frameworks */,
 				CEAACB0D202A5704005B1164 /* Resources */,
+				3AF83F41DA1C3AC36B95608F /* [CP] Embed Pods Frameworks */,
+				E9DE059AFC7781CDE5C545A3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +210,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08B336124C12964D46720532 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-nano3-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AF83F41DA1C3AC36B95608F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-nano3/Pods-nano3-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nano3/Pods-nano3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9DE059AFC7781CDE5C545A3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nano3/Pods-nano3-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CEAACB0B202A5704005B1164 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE297C27202A723400531478 /* GamesListResponse.swift in Sources */,
+				CE297C25202A70DA00531478 /* Services.swift in Sources */,
+				CE297C20202A6E0800531478 /* ShelfTableViewCell.swift in Sources */,
 				CEAACB15202A5704005B1164 /* ViewController.swift in Sources */,
 				CEAACB13202A5704005B1164 /* AppDelegate.swift in Sources */,
+				CEAACB27202A6058005B1164 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +413,7 @@
 		};
 		CEAACB22202A5704005B1164 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0663476959D6AD3B1136220B /* Pods-nano3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +429,7 @@
 		};
 		CEAACB23202A5704005B1164 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EC4658C6BCF9DECF6D56F38 /* Pods-nano3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
