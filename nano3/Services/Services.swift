@@ -30,7 +30,11 @@ class Services{
             "user-key" : IGDB_key,
         ]
         
-        Alamofire.request(IGDB_url + urlGames, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+        let parameters : Parameters = [
+            "fields" : "name"
+        ]
+        
+        Alamofire.request(IGDB_url + urlGames, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers)
             .validate(statusCode: validSequence)
             .validate(contentType: ["application/json"])
             .responseArray { (response : DataResponse<[Game]>) in
