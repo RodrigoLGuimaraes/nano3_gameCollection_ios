@@ -10,6 +10,8 @@ import UIKit
 
 class ShelfTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var stackView: UIStackView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

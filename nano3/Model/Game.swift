@@ -11,12 +11,13 @@ import ObjectMapper
 
 class Game : Mappable {
     var id : Int!
-    var name : String!
-    var url : String!
-    var storyline : String!
-    var popularity : Double!
-    var rating : Double!
-    var total_rating : Double!
+    var name : String?
+    var url : String?
+    var storyline : String?
+    var popularity : Double?
+    var rating : Double?
+    var total_rating : Double?
+    var cover : Cover?
     
     required init?(map: Map){
         
@@ -30,5 +31,6 @@ class Game : Mappable {
         popularity <- map["popularity"]
         rating <- map["rating"]
         total_rating <- map["total_rating"]
+        cover <- map["cover"]
     }
 }

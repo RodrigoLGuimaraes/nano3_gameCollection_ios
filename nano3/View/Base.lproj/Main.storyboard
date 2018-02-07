@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.51784205436706543" green="0.58159953355789185" blue="0.58617168664932251" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="0.41405051946640015" green="0.075170598924160004" blue="0.77319437265396118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.24337011575698853" green="0.43032032251358032" blue="0.51394039392471313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="gameCell" rowHeight="131" id="v23-iR-cZj" customClass="ShelfTableViewCell" customModule="nano3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="131"/>
@@ -60,7 +60,6 @@
                                                                     <constraints>
                                                                         <constraint firstItem="PIS-2l-1qp" firstAttribute="centerX" secondItem="VdR-CA-cFy" secondAttribute="centerX" id="1nL-aj-juW"/>
                                                                         <constraint firstItem="PIS-2l-1qp" firstAttribute="height" secondItem="VdR-CA-cFy" secondAttribute="height" multiplier="0.8" id="DLG-GL-PqI"/>
-                                                                        <constraint firstItem="PIS-2l-1qp" firstAttribute="width" relation="lessThanOrEqual" secondItem="VdR-CA-cFy" secondAttribute="width" id="Rvh-0Z-vAY"/>
                                                                         <constraint firstItem="1ph-qg-ZgH" firstAttribute="centerY" secondItem="PIS-2l-1qp" secondAttribute="centerY" id="ZHF-k1-kSb"/>
                                                                         <constraint firstItem="PIS-2l-1qp" firstAttribute="centerY" secondItem="VdR-CA-cFy" secondAttribute="centerY" id="eNx-km-3Wu"/>
                                                                         <constraint firstItem="1ph-qg-ZgH" firstAttribute="centerX" secondItem="PIS-2l-1qp" secondAttribute="centerX" id="fps-9I-oMs"/>
@@ -147,11 +146,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.18998533487319946" green="0.35768887400627136" blue="0.43821841478347778" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="stackView" destination="N9K-fe-Kv3" id="t52-z5-yUo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.24337011580000001" green="0.43032032250000002" blue="0.51394039390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v09-6Z-giA" secondAttribute="trailing" id="Et7-uq-lcS"/>
                             <constraint firstItem="v09-6Z-giA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SyL-Qq-VSb"/>

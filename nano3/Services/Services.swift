@@ -31,7 +31,7 @@ class Services{
         ]
         
         let parameters : Parameters = [
-            "fields" : "name"
+            "fields" : "*"
         ]
         
         Alamofire.request(IGDB_url + urlGames, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers)

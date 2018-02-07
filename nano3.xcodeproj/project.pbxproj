@@ -10,7 +10,10 @@
 		1FDF5C269E2F3A8D1EED8A10 /* Pods_nano3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2225379586002A682C53BE48 /* Pods_nano3.framework */; };
 		CE297C20202A6E0800531478 /* ShelfTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE297C1F202A6E0800531478 /* ShelfTableViewCell.swift */; };
 		CE297C25202A70DA00531478 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE297C24202A70DA00531478 /* Services.swift */; };
-		CE297C27202A723400531478 /* GamesListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE297C26202A723400531478 /* GamesListResponse.swift */; };
+		CE297C27202A723400531478 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE297C26202A723400531478 /* Game.swift */; };
+		CE50A10E202BB5E6002AE734 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50A10D202BB5E6002AE734 /* GameView.swift */; };
+		CE50A110202BBBD6002AE734 /* UIImageView+download.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50A10F202BBBD6002AE734 /* UIImageView+download.swift */; };
+		CE50A112202BBC57002AE734 /* Cover.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50A111202BBC57002AE734 /* Cover.swift */; };
 		CEAACB13202A5704005B1164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAACB12202A5704005B1164 /* AppDelegate.swift */; };
 		CEAACB15202A5704005B1164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAACB14202A5704005B1164 /* ViewController.swift */; };
 		CEAACB18202A5704005B1164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAACB16202A5704005B1164 /* Main.storyboard */; };
@@ -25,7 +28,10 @@
 		7EC4658C6BCF9DECF6D56F38 /* Pods-nano3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nano3.release.xcconfig"; path = "Pods/Target Support Files/Pods-nano3/Pods-nano3.release.xcconfig"; sourceTree = "<group>"; };
 		CE297C1F202A6E0800531478 /* ShelfTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfTableViewCell.swift; sourceTree = "<group>"; };
 		CE297C24202A70DA00531478 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
-		CE297C26202A723400531478 /* GamesListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListResponse.swift; sourceTree = "<group>"; };
+		CE297C26202A723400531478 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		CE50A10D202BB5E6002AE734 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		CE50A10F202BBBD6002AE734 /* UIImageView+download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+download.swift"; sourceTree = "<group>"; };
+		CE50A111202BBC57002AE734 /* Cover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cover.swift; sourceTree = "<group>"; };
 		CEAACB0F202A5704005B1164 /* nano3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nano3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEAACB12202A5704005B1164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEAACB14202A5704005B1164 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 			children = (
 				CEAACB16202A5704005B1164 /* Main.storyboard */,
 				CEAACB1B202A5704005B1164 /* LaunchScreen.storyboard */,
+				CE50A10D202BB5E6002AE734 /* GameView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -87,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				CE297C24202A70DA00531478 /* Services.swift */,
-				CE297C26202A723400531478 /* GamesListResponse.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -128,6 +134,8 @@
 		CEAACB24202A6047005B1164 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE297C26202A723400531478 /* Game.swift */,
+				CE50A111202BBC57002AE734 /* Cover.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -135,6 +143,7 @@
 		CEAACB25202A604C005B1164 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CE50A10F202BBBD6002AE734 /* UIImageView+download.swift */,
 				CEAACB26202A6058005B1164 /* Constants.swift */,
 			);
 			path = Helpers;
@@ -273,12 +282,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE297C27202A723400531478 /* GamesListResponse.swift in Sources */,
+				CE297C27202A723400531478 /* Game.swift in Sources */,
+				CE50A112202BBC57002AE734 /* Cover.swift in Sources */,
 				CE297C25202A70DA00531478 /* Services.swift in Sources */,
 				CE297C20202A6E0800531478 /* ShelfTableViewCell.swift in Sources */,
 				CEAACB15202A5704005B1164 /* ViewController.swift in Sources */,
+				CE50A110202BBBD6002AE734 /* UIImageView+download.swift in Sources */,
 				CEAACB13202A5704005B1164 /* AppDelegate.swift in Sources */,
 				CEAACB27202A6058005B1164 /* Constants.swift in Sources */,
+				CE50A10E202BB5E6002AE734 /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
