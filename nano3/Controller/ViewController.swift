@@ -88,11 +88,7 @@ class ViewController: UIViewController, ServiceDelegate, UITableViewDataSource, 
                 let cover = gameList[currentIndex].cover ?? Cover()
                 if let url = cover.url {
                     newGame.gameImageView.image = #imageLiteral(resourceName: "loading")
-                    if url.starts(with: "http") {
-                        newGame.gameImageView.downloadedFrom(link: url)
-                    } else {
-                        newGame.gameImageView.downloadedFrom(link: "https:" + url)
-                    }
+                    newGame.gameImageView.downloadedFrom(link: url)
                 } else {
                     newGame.gameImageView.image = #imageLiteral(resourceName: "noImage")
                 }

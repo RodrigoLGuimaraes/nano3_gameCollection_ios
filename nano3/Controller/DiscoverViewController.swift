@@ -78,7 +78,11 @@ class DiscoverViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameCell", for: indexPath) as! GameCollectionViewCell
+        
+        let game = gameList[indexPath.row]
+        
+        cell.updateCell(imageLink: game.cover?.url, name: game.name ?? "Unknown")
         
         return cell
     }

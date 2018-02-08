@@ -13,8 +13,13 @@ class GameCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
-    func updateCell(image : UIImage, name : String) {
-        self.image.image = image
+    func updateCell(imageLink : String?, name : String) {
+        self.image.image = #imageLiteral(resourceName: "loading")
+        if let link = imageLink {
+            self.image.downloadedFrom(link: link)
+        } else {
+            self.image.image = #imageLiteral(resourceName: "noImage")
+        }
         self.nameLabel.text = name
     }
 }
