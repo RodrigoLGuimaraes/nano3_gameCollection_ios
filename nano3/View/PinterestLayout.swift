@@ -44,6 +44,8 @@ class PinterestLayout : UICollectionViewLayout {
     
     
     override func prepare() {
+        cache.removeAll()
+        
         // 1
         guard cache.isEmpty == true, let collectionView = collectionView else {
             return

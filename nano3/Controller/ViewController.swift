@@ -39,7 +39,7 @@ class ViewController: UIViewController, ServiceDelegate, UITableViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        Services.shared.getAllGamesFromAYear(delegateTarget: self)
+        Services.shared.searchGames(text: "", delegateTarget: self)
         tableView.dataSource = self
         tableView.delegate = self
     }

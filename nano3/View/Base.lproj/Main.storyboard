@@ -310,14 +310,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTE-ep-0tR">
-                                <rect key="frame" x="0.0" y="20" width="375" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="06h-Nw-ufz"/>
-                                </constraints>
-                            </pickerView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Woh-0a-WoB">
-                                <rect key="frame" x="0.0" y="140" width="375" height="478"/>
+                                <rect key="frame" x="0.0" y="76" width="375" height="542"/>
                                 <color key="backgroundColor" red="0.23391559720039368" green="0.43633115291595459" blue="0.59849858283996582" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="cLv-dq-JdK" customClass="PinterestLayout" customModule="nano3" customModuleProvider="target"/>
                                 <cells>
@@ -365,23 +359,27 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" placeholder="Search games" translatesAutoresizingMaskIntoConstraints="NO" id="65D-QK-cpA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="0.23391559719999999" green="0.43633115290000002" blue="0.59849858280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Woh-0a-WoB" firstAttribute="leading" secondItem="Mli-cG-sSv" secondAttribute="leading" id="1F7-PP-1lT"/>
+                            <constraint firstItem="65D-QK-cpA" firstAttribute="leading" secondItem="Mli-cG-sSv" secondAttribute="leading" id="HvP-1s-QRR"/>
+                            <constraint firstItem="Mli-cG-sSv" firstAttribute="top" secondItem="65D-QK-cpA" secondAttribute="top" id="Itk-wE-2Jy"/>
                             <constraint firstItem="Woh-0a-WoB" firstAttribute="bottom" secondItem="Mli-cG-sSv" secondAttribute="bottom" id="Trw-CY-Jze"/>
                             <constraint firstItem="Woh-0a-WoB" firstAttribute="trailing" secondItem="Mli-cG-sSv" secondAttribute="trailing" id="d42-bj-fDT"/>
-                            <constraint firstItem="NTE-ep-0tR" firstAttribute="top" secondItem="Mli-cG-sSv" secondAttribute="top" id="f0b-Kh-dwI"/>
-                            <constraint firstItem="NTE-ep-0tR" firstAttribute="leading" secondItem="Mli-cG-sSv" secondAttribute="leading" id="hNI-ow-45D"/>
-                            <constraint firstItem="NTE-ep-0tR" firstAttribute="trailing" secondItem="Mli-cG-sSv" secondAttribute="trailing" id="ow9-da-Wca"/>
-                            <constraint firstItem="Woh-0a-WoB" firstAttribute="top" secondItem="NTE-ep-0tR" secondAttribute="bottom" id="wZO-xb-C1T"/>
+                            <constraint firstItem="65D-QK-cpA" firstAttribute="trailing" secondItem="Mli-cG-sSv" secondAttribute="trailing" id="qJ9-iv-nsA"/>
+                            <constraint firstItem="Woh-0a-WoB" firstAttribute="top" secondItem="65D-QK-cpA" secondAttribute="bottom" id="wDy-nT-HGg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mli-cG-sSv"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Discover" id="aqi-df-ntb"/>
                     <connections>
                         <outlet property="collectionView" destination="Woh-0a-WoB" id="7Df-gX-Cwg"/>
-                        <outlet property="pickerView" destination="NTE-ep-0tR" id="h4V-G4-EUL"/>
+                        <outlet property="searchBar" destination="65D-QK-cpA" id="Wvl-AV-AOD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wt6-7p-Hew" userLabel="First Responder" sceneMemberID="firstResponder"/>

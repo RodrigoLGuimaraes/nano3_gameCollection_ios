@@ -24,13 +24,14 @@ class Services{
     
     fileprivate init() {}
 
-    func getAllGamesFromAYear(delegateTarget : ServiceDelegate) {
+    func searchGames(text: String, delegateTarget: ServiceDelegate){
         
         let headers : HTTPHeaders = [
             "user-key" : IGDB_key,
         ]
         
         let parameters : Parameters = [
+            "search" : text,
             "fields" : "*"
         ]
         

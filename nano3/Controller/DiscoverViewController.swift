@@ -9,12 +9,15 @@
 import UIKit
 import ObjectMapper
 
-class DiscoverViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, ServiceDelegate, PinterestLayoutDelegate {
+class DiscoverViewController: UIViewController, UICollectionViewDataSource, ServiceDelegate, PinterestLayoutDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var pickerView: UIPickerView!
     
     var gameList = [Game]()
+    
+    var searchTextUsed = ""
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     func didReceiveResponse(status: StatusCode, responseJSON: String?) {
         if status == .Success {
@@ -29,20 +32,23 @@ class DiscoverViewController: UIViewController, UIPickerViewDataSource, UIPicker
                 return false
             })
             
+            collectionView.collectionViewLayout.invalidateLayout()
             collectionView.reloadData()
         } else {
             //TODO: Alert!
         }
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
+        searchTextUsed = searchBar.text!
+        Services.shared.searchGames(text: searchTextUsed, delegateTarget: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Services.shared.getAllGamesFromAYear(delegateTarget: self)
-        
-        self.pickerView.dataSource = self
-        self.pickerView.delegate = self
-        pickerView.selectRow(GAME_YEARS.count-1, inComponent: 0, animated: false)
+        Services.shared.searchGames(text: searchTextUsed, delegateTarget: self)
         
         collectionView.backgroundColor  = UIColor.clear
         collectionView.dataSource = self
@@ -50,18 +56,8 @@ class DiscoverViewController: UIViewController, UIPickerViewDataSource, UIPicker
         if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
         }
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return GAME_YEARS.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(GAME_YEARS[row])"
+        
+        searchBar.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
