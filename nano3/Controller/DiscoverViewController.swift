@@ -84,6 +84,10 @@ class DiscoverViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
 
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        return 150 + CGFloat(arc4random_uniform(150))
+        if let rating = gameList[indexPath.row].total_rating {
+            print("rating = \(rating)")
+            return 150 + (3 * CGFloat(rating - 50))
+        }
+        return 150
     }
 }
