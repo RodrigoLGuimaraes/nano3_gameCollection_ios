@@ -305,7 +305,7 @@
         <!--Discover-->
         <scene sceneID="bwi-Dn-COR">
             <objects>
-                <viewController id="rMM-5U-CzU" sceneMemberID="viewController">
+                <viewController id="rMM-5U-CzU" customClass="DiscoverViewController" customModule="nano3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Icy-6b-Hs9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -319,20 +319,49 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Woh-0a-WoB">
                                 <rect key="frame" x="0.0" y="140" width="375" height="478"/>
                                 <color key="backgroundColor" red="0.23391559720039368" green="0.43633115291595459" blue="0.59849858283996582" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HjG-Wd-LJI">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
+                                <collectionViewLayout key="collectionViewLayout" id="cLv-dq-JdK" customClass="PinterestLayout" customModule="nano3" customModuleProvider="target"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="plM-5k-Jyj">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="gameCell" id="plM-5k-Jyj" customClass="GameCollectionViewCell" customModule="nano3" customModuleProvider="target">
+                                        <rect key="frame" x="90" y="0.0" width="195" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="195" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="WHn-D0-HSs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="195" height="200"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghh-KZ-iAs">
+                                                    <rect key="frame" x="-0.5" y="140" width="195" height="60"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.59578339041095896" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Super Mario Bros. 3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXe-ys-vBu">
+                                                    <rect key="frame" x="-0.5" y="139.5" width="195" height="60"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="ghh-KZ-iAs" firstAttribute="height" secondItem="WHn-D0-HSs" secondAttribute="height" multiplier="0.3" id="5Sq-lB-V00"/>
+                                            <constraint firstAttribute="trailing" secondItem="WHn-D0-HSs" secondAttribute="trailing" id="FLA-ie-EeR"/>
+                                            <constraint firstItem="WHn-D0-HSs" firstAttribute="leading" secondItem="plM-5k-Jyj" secondAttribute="leading" id="JLS-nZ-glu"/>
+                                            <constraint firstAttribute="bottom" secondItem="WHn-D0-HSs" secondAttribute="bottom" id="KAA-qA-hyY"/>
+                                            <constraint firstItem="ghh-KZ-iAs" firstAttribute="centerX" secondItem="WHn-D0-HSs" secondAttribute="centerX" id="MFL-sp-cWh"/>
+                                            <constraint firstItem="ghh-KZ-iAs" firstAttribute="width" secondItem="WHn-D0-HSs" secondAttribute="width" id="Sk0-a3-2vG"/>
+                                            <constraint firstItem="HXe-ys-vBu" firstAttribute="centerY" secondItem="ghh-KZ-iAs" secondAttribute="centerY" id="Sx1-cg-btQ"/>
+                                            <constraint firstItem="HXe-ys-vBu" firstAttribute="width" secondItem="ghh-KZ-iAs" secondAttribute="width" id="h5I-aM-8e6"/>
+                                            <constraint firstItem="ghh-KZ-iAs" firstAttribute="bottom" secondItem="WHn-D0-HSs" secondAttribute="bottom" id="opT-R6-LiZ"/>
+                                            <constraint firstItem="HXe-ys-vBu" firstAttribute="height" secondItem="ghh-KZ-iAs" secondAttribute="height" id="x77-Mh-ZOh"/>
+                                            <constraint firstItem="WHn-D0-HSs" firstAttribute="top" secondItem="plM-5k-Jyj" secondAttribute="top" id="ybo-84-x5n"/>
+                                            <constraint firstItem="HXe-ys-vBu" firstAttribute="centerX" secondItem="ghh-KZ-iAs" secondAttribute="centerX" id="z3Z-xx-pNT"/>
+                                        </constraints>
+                                        <size key="customSize" width="195" height="200"/>
+                                        <connections>
+                                            <outlet property="image" destination="WHn-D0-HSs" id="K11-iB-w05"/>
+                                            <outlet property="nameLabel" destination="HXe-ys-vBu" id="3VE-eU-OBm"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -350,6 +379,10 @@
                         <viewLayoutGuide key="safeArea" id="Mli-cG-sSv"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Discover" id="aqi-df-ntb"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Woh-0a-WoB" id="7Df-gX-Cwg"/>
+                        <outlet property="pickerView" destination="NTE-ep-0tR" id="h4V-G4-EUL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wt6-7p-Hew" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,6 +14,9 @@
 		CE50A10E202BB5E6002AE734 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50A10D202BB5E6002AE734 /* GameView.swift */; };
 		CE50A110202BBBD6002AE734 /* UIImageView+download.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50A10F202BBBD6002AE734 /* UIImageView+download.swift */; };
 		CE50A112202BBC57002AE734 /* Cover.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50A111202BBC57002AE734 /* Cover.swift */; };
+		CE5B25E5202D080B0084FCEF /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25E4202D080B0084FCEF /* DiscoverViewController.swift */; };
+		CE5B25E7202D0C1B0084FCEF /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25E6202D0C1B0084FCEF /* PinterestLayout.swift */; };
+		CE5B25E9202D11E80084FCEF /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25E8202D11E80084FCEF /* GameCollectionViewCell.swift */; };
 		CEAACB13202A5704005B1164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAACB12202A5704005B1164 /* AppDelegate.swift */; };
 		CEAACB15202A5704005B1164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAACB14202A5704005B1164 /* ViewController.swift */; };
 		CEAACB18202A5704005B1164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAACB16202A5704005B1164 /* Main.storyboard */; };
@@ -32,6 +35,9 @@
 		CE50A10D202BB5E6002AE734 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		CE50A10F202BBBD6002AE734 /* UIImageView+download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+download.swift"; sourceTree = "<group>"; };
 		CE50A111202BBC57002AE734 /* Cover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cover.swift; sourceTree = "<group>"; };
+		CE5B25E4202D080B0084FCEF /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		CE5B25E6202D0C1B0084FCEF /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		CE5B25E8202D11E80084FCEF /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEAACB0F202A5704005B1164 /* nano3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nano3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEAACB12202A5704005B1164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEAACB14202A5704005B1164 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +83,7 @@
 				CEAACB16202A5704005B1164 /* Main.storyboard */,
 				CEAACB1B202A5704005B1164 /* LaunchScreen.storyboard */,
 				CE50A10D202BB5E6002AE734 /* GameView.swift */,
+				CE5B25E6202D0C1B0084FCEF /* PinterestLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -85,7 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				CEAACB14202A5704005B1164 /* ViewController.swift */,
+				CE5B25E4202D080B0084FCEF /* DiscoverViewController.swift */,
 				CE297C1F202A6E0800531478 /* ShelfTableViewCell.swift */,
+				CE5B25E8202D11E80084FCEF /* GameCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -289,8 +298,11 @@
 				CEAACB15202A5704005B1164 /* ViewController.swift in Sources */,
 				CE50A110202BBBD6002AE734 /* UIImageView+download.swift in Sources */,
 				CEAACB13202A5704005B1164 /* AppDelegate.swift in Sources */,
+				CE5B25E7202D0C1B0084FCEF /* PinterestLayout.swift in Sources */,
+				CE5B25E9202D11E80084FCEF /* GameCollectionViewCell.swift in Sources */,
 				CEAACB27202A6058005B1164 /* Constants.swift in Sources */,
 				CE50A10E202BB5E6002AE734 /* GameView.swift in Sources */,
+				CE5B25E5202D080B0084FCEF /* DiscoverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
