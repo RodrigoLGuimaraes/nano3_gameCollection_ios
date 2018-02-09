@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GameViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -44,16 +44,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return result < 4 ? 4 : result
     }
     
+    @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
+        
+        if longPressGestureRecognizer.state == UIGestureRecognizerState.began {
+        
+            let touchPoint = longPressGestureRecognizer.location(in: self.view)
+            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+                let cell = tableView.cellForRow(at: indexPath) as! ShelfTableViewCell
+                
+                for case let gameView as GameView in cell.stackView.arrangedSubviews {
+                    gameView.toggleDeleteBtn(show: true)
+                }
+            }
+            
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath) as! ShelfTableViewCell
         
         cell.stackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
         
+        //Delete game by longpressing
+        let longGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPress(longPressGestureRecognizer:)))
+        cell.addGestureRecognizer(longGestureRecognizer)
+        
         for i in 0..<NUMBER_OF_ITEMS_PER_ROW {
-            let newGame = GameView()
             let currentIndex = indexPath.row * NUMBER_OF_ITEMS_PER_ROW + i
+            let newGame = GameView(id: currentIndex, delegate: self)
             if currentIndex >= gameList.count {
                 //Default item
+                newGame.frameImageView.isHidden = true
+                newGame.gameImageView.isHidden = true
                 newGame.frameImageView.image = UIImage()
                 newGame.frameImageView.backgroundColor = UIColor.white.withAlphaComponent(0)
                 newGame.gameImageView.image = UIImage()
@@ -122,6 +144,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
 
-
+    func didDeleteGame(id: Int) {
+        let game = gameList[id]
+        DataModel.shared.deleteGame(game)
+        gameList = DataModel.shared.savedGames
+        tableView.reloadData()
+    }
 }
 

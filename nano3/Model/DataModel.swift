@@ -36,4 +36,23 @@ class DataModel {
         defaults.set(savedGames.toJSONString()!, forKey: SAVED_GAMES_KEY)
         return true
     }
+    
+    func deleteGame(_ game : Game) -> Bool {
+        var index : Int = 0
+        for candidate in savedGames {
+            if candidate.id == game.id {
+                break
+            }
+            index += 1
+        }
+        
+        if index < savedGames.count {
+            savedGames.remove(at: index)
+            let defaults = UserDefaults.standard
+            defaults.set(savedGames.toJSONString()!, forKey: SAVED_GAMES_KEY)
+            return true
+        }
+        
+        return false
+    }
 }
