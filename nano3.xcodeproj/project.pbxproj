@@ -23,6 +23,7 @@
 		CEAACB1A202A5704005B1164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEAACB19202A5704005B1164 /* Assets.xcassets */; };
 		CEAACB1D202A5704005B1164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAACB1B202A5704005B1164 /* LaunchScreen.storyboard */; };
 		CEAACB27202A6058005B1164 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAACB26202A6058005B1164 /* Constants.swift */; };
+		CEE52307202E452000643686 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE52306202E452000643686 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		CEAACB1C202A5704005B1164 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEAACB1E202A5704005B1164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEAACB26202A6058005B1164 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CEE52306202E452000643686 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				CE297C26202A723400531478 /* Game.swift */,
 				CE50A111202BBC57002AE734 /* Cover.swift */,
+				CEE52306202E452000643686 /* DataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				CE297C20202A6E0800531478 /* ShelfTableViewCell.swift in Sources */,
 				CEAACB15202A5704005B1164 /* ViewController.swift in Sources */,
 				CE50A110202BBBD6002AE734 /* UIImageView+download.swift in Sources */,
+				CEE52307202E452000643686 /* DataModel.swift in Sources */,
 				CEAACB13202A5704005B1164 /* AppDelegate.swift in Sources */,
 				CE5B25E7202D0C1B0084FCEF /* PinterestLayout.swift in Sources */,
 				CE5B25E9202D11E80084FCEF /* GameCollectionViewCell.swift in Sources */,

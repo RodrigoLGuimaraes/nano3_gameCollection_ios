@@ -9,39 +9,24 @@
 import UIKit
 import ObjectMapper
 
-class ViewController: UIViewController, ServiceDelegate, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     let NUMBER_OF_ITEMS_PER_ROW = 3
     
     var gameList = [Game]()
-    
-    func didReceiveResponse(status: StatusCode, responseJSON: String?) {
-        if status == .Success {
-            gameList = Mapper<Game>().mapArray(JSONString: responseJSON!)!
-            
-            gameList = gameList.filter({ (game) -> Bool in
-                if let cover = game.cover {
-                    if let url = cover.url {
-                        return true
-                    }
-                }
-                return false
-            })
-            
-            tableView.reloadData()
-        } else {
-            //TODO: Alert!
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        Services.shared.searchGames(text: "", delegateTarget: self)
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        gameList = DataModel.shared.savedGames
+        tableView.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

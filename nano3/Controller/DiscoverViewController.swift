@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-class DiscoverViewController: UIViewController, UICollectionViewDataSource, ServiceDelegate, PinterestLayoutDelegate, UISearchBarDelegate {
+class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, ServiceDelegate, PinterestLayoutDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -52,6 +52,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, Serv
         
         collectionView.backgroundColor  = UIColor.clear
         collectionView.dataSource = self
+        collectionView.delegate = self
         
         if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
@@ -81,6 +82,10 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, Serv
         cell.updateCell(imageLink: game.cover?.url, name: game.name ?? "Unknown")
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        DataModel.shared.updateSavedGames(game: gameList[indexPath.row])
     }
 
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
