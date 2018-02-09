@@ -81,6 +81,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.stackView.addArrangedSubview(newGame)
         }
         
+        var currentTimeSum : Double = 0.1
+        for gameView in cell.stackView.arrangedSubviews {
+            let time = 0.1 + currentTimeSum
+            gameView.alpha = 0
+            let frame = CGRect(x: gameView.frame.minX, y: gameView.frame.minY - 25, width: gameView.frame.width, height: gameView.frame.height)
+            gameView.frame = frame
+            UIView.animate(withDuration: time) {
+                let frame = CGRect(x: gameView.frame.minX, y: gameView.frame.minY + 25, width: gameView.frame.width, height: gameView.frame.height)
+                gameView.frame = frame
+                gameView.alpha = 1
+            }
+            currentTimeSum += 0.2
+        }
+        
         return cell
     }
     
