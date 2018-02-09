@@ -16,6 +16,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let NUMBER_OF_ITEMS_PER_ROW = 3
     
     var gameList = [Game]()
+    
+    var selectedIndexPath : Int = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,17 +46,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return result < 4 ? 4 : result
     }
     
+    func toggleDeleteBtns(for indexPath: IndexPath, show : Bool) {
+            let cell = tableView.cellForRow(at: indexPath) as! ShelfTableViewCell
+            
+            for case let gameView as GameView in cell.stackView.arrangedSubviews {
+                gameView.toggleDeleteBtn(show: show)
+        }
+    }
+    
     @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         
         if longPressGestureRecognizer.state == UIGestureRecognizerState.began {
         
             let touchPoint = longPressGestureRecognizer.location(in: self.view)
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
-                let cell = tableView.cellForRow(at: indexPath) as! ShelfTableViewCell
-                
-                for case let gameView as GameView in cell.stackView.arrangedSubviews {
-                    gameView.toggleDeleteBtn(show: true)
-                }
+                toggleDeleteBtns(for: indexPath, show: true)
             }
             
         }
@@ -120,8 +126,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-    var selectedIndexPath : Int = -1
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == selectedIndexPath {
             return 250
@@ -131,6 +135,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let cell = tableView.cellForRow(at: indexPath) as! ShelfTableViewCell
+        if let gameView = cell.stackView.arrangedSubviews.first as? GameView {
+            if !gameView.deleteButton.isHidden {
+                toggleDeleteBtns(for: indexPath, show: false)
+                return
+            }
+        }
+        
         if selectedIndexPath == indexPath.row {
             selectedIndexPath = -1
         } else {

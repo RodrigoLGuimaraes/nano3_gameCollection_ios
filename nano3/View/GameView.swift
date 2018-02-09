@@ -85,7 +85,7 @@ class GameView: UIView {
         if gameImageView.isHidden && frameImageView.isHidden {
             return
         }
-        deleteButton.isHidden = false
+        deleteButton.isHidden = !show
     }
     
 }
