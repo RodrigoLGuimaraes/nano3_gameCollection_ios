@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import Toast
 
 class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, ServiceDelegate, PinterestLayoutDelegate, UISearchBarDelegate {
 
@@ -85,7 +86,13 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        DataModel.shared.updateSavedGames(game: gameList[indexPath.row])
+        let result = DataModel.shared.updateSavedGames(game: gameList[indexPath.row])
+        
+        if result {
+            self.view.makeToast("Game added to your collection", duration: 3, position: CSToastPositionCenter)
+        } else {
+           self.view.makeToast("This game is already in your collection", duration: 3, position: CSToastPositionCenter)
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {

@@ -23,16 +23,17 @@ class DataModel {
         }
     }
     
-    func updateSavedGames(game : Game) {
+    func updateSavedGames(game : Game) -> Bool {
         for testGame in savedGames {
             if testGame.id == game.id {
                 //Game already exists in database
-                return
+                return false
             }
         }
         
         savedGames.append(game)
         let defaults = UserDefaults.standard
         defaults.set(savedGames.toJSONString()!, forKey: SAVED_GAMES_KEY)
+        return true
     }
 }
