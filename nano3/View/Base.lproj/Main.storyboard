@@ -162,7 +162,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Collection" id="x5w-mR-ckk"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="gamepad" id="x5w-mR-ckk"/>
                     <connections>
                         <outlet property="tableView" destination="v09-6Z-giA" id="Lmy-xu-qK9"/>
                     </connections>
@@ -378,7 +378,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mli-cG-sSv"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Discover" id="aqi-df-ntb"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="more" id="aqi-df-ntb"/>
                     <connections>
                         <outlet property="collectionView" destination="Woh-0a-WoB" id="7Df-gX-Cwg"/>
                         <outlet property="searchBar" destination="65D-QK-cpA" id="Wvl-AV-AOD"/>
@@ -392,6 +392,8 @@
     <resources>
         <image name="frame" width="750" height="750"/>
         <image name="gPlaceholder" width="264" height="362"/>
+        <image name="gamepad" width="25" height="25"/>
+        <image name="more" width="25" height="25"/>
         <image name="quality" width="2000" height="1537"/>
         <image name="shelf" width="640" height="154"/>
     </resources>
